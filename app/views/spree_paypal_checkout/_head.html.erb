@@ -1,0 +1,4 @@
+<% if current_store.paypal_checkout_gateway.present? %>
+  <%= javascript_import_module_tag 'paypal-checkout' %>
+  <script src="https://applepay.cdn-apple.com/jsapi/1.latest/apple-pay-sdk.js" nonce></script>
+<% end %>
