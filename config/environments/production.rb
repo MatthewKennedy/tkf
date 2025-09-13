@@ -19,7 +19,7 @@ Rails.application.configure do
   config.public_file_server.headers = { "cache-control" => "public, max-age=#{ 1.year.to_i }" }
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
-  config.asset_host = "https://cdn.aypex.io"
+  config.asset_host = "https://cdn.tongkat.fitness"
 
   # Store uploaded files on the local file system (see config/storage.yml for options).
   config.active_storage.service = :amazon
@@ -51,7 +51,7 @@ Rails.application.configure do
   # config.action_mailer.raise_delivery_errors = false
 
   # Set host to be used by links generated in mailer templates.
-  config.action_mailer.default_url_options = { host: "omes.io" }
+  config.action_mailer.default_url_options = { host: "tongkat.fitness" }
 
   config.action_mailer.delivery_method = :postmark
   config.action_mailer.postmark_settings = { api_token: Rails.application.credentials.dig(:postmark, :api_token) }
@@ -77,14 +77,20 @@ Rails.application.configure do
 
   # Enable DNS rebinding protection and other `Host` header attacks.
   config.hosts = [
-    "omes.io",     # Allow requests from omes.io
-    /.*\.omes\.io/, # Allow requests from subdomains like `www.omes.io`
-    "aypex.io",     # Allow requests from aypex.io
-    /.*\.aypex\.io/ # Allow requests from subdomains like `www.aypex.io`
+    "tongkat.fitness",
+    /.*\.tongkat\.fitness/,
+    "tongkatfitness.com",
+    /.*\.tongkatfitness\.com/,
+    "tongkatfitness.co.uk",
+    /.*\.tongkatfitness\.co.uk/,
+    "tongkatfitness.eu",
+    /.*\.tongkatfitness\.eu/,
+    "tongkatfitness.us",
+    /.*\.tongkatfitness\.us/
   ]
   #
   # Skip DNS rebinding protection for the default health check endpoint.
   config.host_authorization = { exclude: ->(request) { request.path == "/healthz" } }
 end
 
-Rails.application.routes.default_url_options[:host] = "omes.io"
+Rails.application.routes.default_url_options[:host] = "tongkatfitness.com"

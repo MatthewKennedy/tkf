@@ -1,6 +1,6 @@
 Rails.application.configure do
   config.content_security_policy do |policy|
-    cdn_host = "cdn.aypex.io"
+    cdn_host = "cdn.tongkat.fitness"
 
     policy.default_src :self, :https, cdn_host
     policy.font_src    :self, :https, :data, cdn_host
