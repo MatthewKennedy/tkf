@@ -85,7 +85,7 @@ gem "sentry-rails"
 
 gem "rails_semantic_logger", "~> 4.17"
 
-gem "yabeda", "~> 0.13.1"
+gem "yabeda", "~> 0.14.0"
 gem "yabeda-activerecord", "~> 0.1.1"
 gem "yabeda-http_requests", "~> 0.2.1"
 gem "yabeda-prometheus-mmap", "~> 0.4.0"
