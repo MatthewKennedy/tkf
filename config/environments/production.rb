@@ -93,4 +93,4 @@ Rails.application.configure do
   config.host_authorization = { exclude: ->(request) { request.path == "/healthz" } }
 end
 
-Rails.application.routes.default_url_options[:host] = "tongkatfitness.com"
+Rails.application.routes.default_url_options[:host] = "tongkat.fitness"
