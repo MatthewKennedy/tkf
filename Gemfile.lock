@@ -823,7 +823,7 @@ GEM
     yabeda-prometheus-mmap (0.4.0)
       prometheus-client-mmap
       yabeda (~> 0.10)
-    yabeda-puma-plugin (0.7.1)
+    yabeda-puma-plugin (0.8.0)
       json
       puma
       yabeda (~> 0.5)
@@ -885,7 +885,7 @@ DEPENDENCIES
   yabeda-activerecord (~> 0.1.1)
   yabeda-http_requests (~> 0.2.1)
   yabeda-prometheus-mmap (~> 0.4.0)
-  yabeda-puma-plugin (~> 0.7.1)
+  yabeda-puma-plugin (~> 0.8.0)
   yabeda-rails (~> 0.10.0)
 
 BUNDLED WITH

@@ -89,7 +89,7 @@ gem "yabeda", "~> 0.14.0"
 gem "yabeda-activerecord", "~> 0.1.1"
 gem "yabeda-http_requests", "~> 0.2.1"
 gem "yabeda-prometheus-mmap", "~> 0.4.0"
-gem "yabeda-puma-plugin", "~> 0.7.1"
+gem "yabeda-puma-plugin", "~> 0.8.0"
 gem "yabeda-rails", "~> 0.10.0"
 
 # Spree
