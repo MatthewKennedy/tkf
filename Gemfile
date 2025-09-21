@@ -59,6 +59,7 @@ end
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
+  gem "spree_sample"
 end
 
 group :test do
@@ -100,3 +101,5 @@ gem "spree_storefront", spree_opts
 gem "spree_emails", spree_opts
 gem "spree_paypal_checkout", "~> 0.5.2"
 gem "spree_google_analytics", "~> 1.0"
+
+gem "recaptcha", "~> 5.21"

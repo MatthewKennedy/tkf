@@ -82,7 +82,7 @@ Rails.application.config.after_initialize do
   # Rails.application.config.spree.page_sections << Spree::PageSections::ContactFormToGetInTouch
   # Rails.application.config.spree.page_blocks << Spree::PageBlocks::BigRedButtonToCallSales
 
-  # Rails.application.config.spree_storefront.head_partials << 'spree/shared/that_js_snippet_that_marketing_forced_me_to_include'
+  Rails.application.config.spree_storefront.head_partials << 'spree/shared/custom_head'
 end
 
 Spree.user_class = "Spree::User"

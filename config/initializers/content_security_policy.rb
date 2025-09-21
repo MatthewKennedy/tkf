@@ -6,7 +6,8 @@ Rails.application.configure do
     policy.font_src    :self, :https, :data, cdn_host
     policy.img_src     :self, :https, :data, :blob, cdn_host
     policy.object_src  :none
-    policy.script_src  :self, :https, :unsafe_inline, cdn_host
+    policy.script_src  :self, :https, :unsafe_inline, :blob, cdn_host
+    policy.worker_src  :self, :blob
     policy.style_src   :self, :https, :unsafe_inline, cdn_host
     policy.connect_src :self, :https, :blob, cdn_host
   end
