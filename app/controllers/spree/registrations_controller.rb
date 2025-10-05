@@ -6,7 +6,7 @@ module Spree
     def create
       build_resource(sign_up_params)
 
-      verify_recaptcha(action: 'signup', minimum_score: 0.5) && resource.save
+      verify_recaptcha(action: "signup", minimum_score: 0.5) && resource.save
       yield resource if block_given?
       if resource.persisted?
         if resource.active_for_authentication?
