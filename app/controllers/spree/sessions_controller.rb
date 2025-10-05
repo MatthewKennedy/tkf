@@ -1,5 +1,5 @@
 module Spree
-  class UserSessionsController < ::Devise::SessionsController
+  class SessionsController < ::Devise::SessionsController
     include Spree::Storefront::DeviseConcern
 
     protected
