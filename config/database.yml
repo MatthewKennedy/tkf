@@ -102,19 +102,22 @@ production:
   primary: &primary_production
     <<: *default
     database: tkf_production
+    host: pg-primary-rw
     username: <%= Rails.application.credentials.dig(:database, :username) %>
     password: <%= Rails.application.credentials.dig(:database, :password) %>
-    host: <%= Rails.application.credentials.dig(:database, :host) %>
   cache:
     <<: *primary_production
     database: tkf_production_cache
+    host: pg-cache-rw
     migrations_paths: db/cache_migrate
   queue:
     <<: *primary_production
+    host: pg-queue-rw
     database: tkf_production_queue
     migrations_paths: db/queue_migrate
   cable:
     <<: *primary_production
+    host: pg-cable-rw
     database: tkf_production_cable
     migrations_paths: db/cable_migrate
 
