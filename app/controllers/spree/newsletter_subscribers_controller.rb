@@ -6,7 +6,7 @@ module Spree
 
     # POST /newsletter_subscribers
     def create
-      if verify_recaptcha(action: "signup", minimum_score: 0.5)
+      if verify_recaptcha(action: "newsletter", minimum_score: 0.5)
         subscriber = Spree::NewsletterSubscriber.subscribe(email: newsletter_params[:email], user: try_spree_current_user)
 
         if subscriber.errors.any?

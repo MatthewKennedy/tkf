@@ -8,6 +8,7 @@
         <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'text-input', required: true %>
       </div>
       <div class="actions">
+        <%= recaptcha_v3(action: 'password_reset', turbo: true) %>
         <%= f.submit Spree.t(:reset_password), class: 'btn btn-primary w-full' %>
       </div>
     <% end %>
