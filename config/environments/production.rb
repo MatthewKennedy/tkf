@@ -83,6 +83,8 @@ Rails.application.configure do
     /.*\.tongkatfitness\.com/,
     "tongkatfitness.co.uk",
     /.*\.tongkatfitness\.co.uk/,
+    "tongkatfitness.uk",
+    /.*\.tongkatfitness\.uk/,
     "tongkatfitness.eu",
     /.*\.tongkatfitness\.eu/,
     "tongkatfitness.us",
