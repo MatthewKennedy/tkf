@@ -89,7 +89,7 @@ Spree.user_class = "Spree::User"
 # Use a different class for admin users
 # Spree.admin_user_class = 'AdminUser'
 
-Spree.root_domain = ENV.fetch('SPREE_ROOT_DOMAIN', 'tongkat.fitness')
+Spree.root_domain = ENV.fetch("SPREE_ROOT_DOMAIN", "tongkat.fitness")
 
 Rails.application.config.to_prepare do
   require_dependency "spree/authentication_helpers"
