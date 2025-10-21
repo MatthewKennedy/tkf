@@ -98,4 +98,3 @@ end
 if defined?(Devise) && Devise.respond_to?(:parent_controller)
   Devise.parent_controller = "Spree::BaseController"
 end
-
