@@ -13,7 +13,7 @@ module Spree
       if verify_recaptcha_success && successfully_sent?(resource)
         respond_with({}, location: after_sending_reset_password_instructions_path_for(resource_name))
       else
-        new_session_path(resource_name)
+        respond_with({}, location: new_session_path(resource_name))
       end
     end
 
