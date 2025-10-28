@@ -2,7 +2,7 @@ module Spree
   class PasswordsController < ::Devise::PasswordsController
     include Spree::Storefront::DeviseConcern
 
-     # POST /resource/password
+    # POST /resource/password
     def create
       verify_recaptcha_success = verify_recaptcha(action: "password_reset", minimum_score: 0.5)
 
