@@ -75,7 +75,7 @@ end
 gem "devise", "~> 4.9"
 
 # Storage
-gem "aws-sdk-s3", "~> 1.199", require: false
+gem "aws-sdk-s3", "~> 1.202", require: false
 
 # Emails
 gem "postmark-rails", "~> 0.22.1"
