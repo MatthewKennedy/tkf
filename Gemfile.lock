@@ -1,4 +1,15 @@
 GIT
+  remote: https://github.com/matthewkennedy/spree_google_analytics.git
+  revision: 9b15eb2fea277e3a4d1964cb246b48d4b1b8f675
+  branch: main
+  specs:
+    spree_google_analytics (1.1.0)
+      spree (>= 5.1.0.beta)
+      spree_admin (>= 5.1.0.beta)
+      spree_extension
+      spree_storefront (>= 5.1.0.beta)
+
+GIT
   remote: https://github.com/matthewkennedy/spree_shipstation.git
   revision: 8d38d92b7c8405e3eda765885a2c2dea92a20c08
   branch: v2-1
@@ -719,11 +730,6 @@ GEM
     spree_extension (0.1.0)
       activerecord (>= 4.2)
       spree_core
-    spree_google_analytics (1.1.0)
-      spree (>= 5.1.0.beta)
-      spree_admin (>= 5.1.0.beta)
-      spree_extension
-      spree_storefront (>= 5.1.0.beta)
     spree_paypal_checkout (0.5.4)
       paypal-server-sdk (~> 1.1)
       spree (>= 5.1.0)
@@ -853,8 +859,11 @@ PLATFORMS
   aarch64-linux
   aarch64-linux-gnu
   aarch64-linux-musl
+  arm-linux
   arm-linux-gnu
+  arm-linux-gnueabihf
   arm-linux-musl
+  arm-linux-musleabihf
   arm64-darwin
   x86_64-darwin
   x86_64-linux
@@ -889,7 +898,7 @@ DEPENDENCIES
   spree (~> 5.1.0)
   spree_admin (~> 5.1.0)
   spree_emails (~> 5.1.0)
-  spree_google_analytics (~> 1.0)
+  spree_google_analytics!
   spree_paypal_checkout (~> 0.5.2)
   spree_sample
   spree_shipstation!
@@ -908,4 +917,4 @@ DEPENDENCIES
   yabeda-rails (~> 0.10.0)
 
 BUNDLED WITH
-   2.7.1
+   2.7.2

@@ -100,9 +100,9 @@ gem "spree_admin", spree_opts
 gem "spree_storefront", spree_opts
 gem "spree_emails", spree_opts
 gem "spree_paypal_checkout", "~> 0.5.2"
-gem "spree_google_analytics", "~> 1.0"
 
-gem "spree_shipstation", github: "matthewkennedy/spree_shipstation", branch: "v2-1"
+gem "spree_google_analytics", github: "matthewkennedy/spree_google_analytics", branch: "main"
+gem "spree_shipstation",      github: "matthewkennedy/spree_shipstation",      branch: "v2-1"
 
 gem "recaptcha", "~> 5.21"
 
