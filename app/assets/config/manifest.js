@@ -3,3 +3,5 @@
 //= link_tree ../../../vendor/javascript .js
 //= link_tree ../builds
 //= link application.css
+
+//= link integration_icons/shipstation-logo.webp
