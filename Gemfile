@@ -106,5 +106,4 @@ gem "spree_shipstation",      github: "matthewkennedy/spree_shipstation",      b
 
 gem "recaptcha", "~> 5.21"
 
-gem "sprockets-rails", "~> 3.5"
-gem "sassc-rails", "~> 2.1"
+gem "propshaft", "~> 1.3"

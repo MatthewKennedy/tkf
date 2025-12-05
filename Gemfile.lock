@@ -11,7 +11,7 @@ GIT
 
 GIT
   remote: https://github.com/matthewkennedy/spree_shipstation.git
-  revision: 731313e25513069591692876336eec5e94553ae5
+  revision: dc88cf8cb57e171f4acc4f013989ca9dc102df0d
   branch: v2-1
   specs:
     spree_shipstation (2.0.6)
@@ -489,6 +489,10 @@ GEM
       bigdecimal
       logger
       rb_sys (~> 0.9.117)
+    propshaft (1.3.1)
+      actionpack (>= 7.0.0)
+      activesupport (>= 7.0.0)
+      rack
     psych (5.2.6)
       date
       stringio
@@ -614,14 +618,6 @@ GEM
       google-protobuf (~> 4.31)
     sass-embedded (1.94.2-x86_64-linux-musl)
       google-protobuf (~> 4.31)
-    sassc (2.4.0)
-      ffi (~> 1.9)
-    sassc-rails (2.1.2)
-      railties (>= 4.0.0)
-      sassc (>= 2.0)
-      sprockets (> 3.0)
-      sprockets-rails
-      tilt
     securerandom (0.4.1)
     selenium-webdriver (4.38.0)
       base64 (~> 0.2)
@@ -748,14 +744,6 @@ GEM
       tailwindcss-rails
       tailwindcss-ruby
       turbo-rails
-    sprockets (4.2.2)
-      concurrent-ruby (~> 1.0)
-      logger
-      rack (>= 2.2.4, < 4)
-    sprockets-rails (3.5.2)
-      actionpack (>= 6.1)
-      activesupport (>= 6.1)
-      sprockets (>= 3.0.0)
     sshkit (1.24.0)
       base64
       logger
@@ -790,7 +778,6 @@ GEM
     thruster (0.1.16-arm64-darwin)
     thruster (0.1.16-x86_64-darwin)
     thruster (0.1.16-x86_64-linux)
-    tilt (2.6.1)
     timeout (0.4.4)
     tinymce-rails (6.8.6.1)
       railties (>= 3.1.1)
@@ -880,12 +867,12 @@ DEPENDENCIES
   mini_racer
   pg (~> 1.6)
   postmark-rails (~> 0.22.1)
+  propshaft (~> 1.3)
   puma (>= 5.0)
   rails (~> 8.0.2)
   rails_semantic_logger (~> 4.17)
   recaptcha (~> 5.21)
   rubocop-rails-omakase
-  sassc-rails (~> 2.1)
   selenium-webdriver
   sentry-rails
   sentry-ruby
@@ -900,7 +887,6 @@ DEPENDENCIES
   spree_sample
   spree_shipstation!
   spree_storefront (~> 5.2.0)
-  sprockets-rails (~> 3.5)
   stimulus-rails
   thruster
   turbo-rails
