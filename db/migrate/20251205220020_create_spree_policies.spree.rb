@@ -9,7 +9,7 @@ class CreateSpreePolicies < ActiveRecord::Migration[7.2]
       t.timestamps
     end
 
-    add_index :spree_policies, [:store_id, :slug], unique: true
+    add_index :spree_policies, [ :store_id, :slug ], unique: true
     create_table :spree_policy_translations do |t|
       t.string :locale, null: false
       t.string :name
@@ -18,6 +18,6 @@ class CreateSpreePolicies < ActiveRecord::Migration[7.2]
       t.timestamps
     end
 
-    add_index :spree_policy_translations, [:spree_policy_id, :locale], unique: true
+    add_index :spree_policy_translations, [ :spree_policy_id, :locale ], unique: true
   end
 end

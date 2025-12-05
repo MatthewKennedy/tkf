@@ -10,8 +10,8 @@ class CreateSpreeMetafields < ActiveRecord::Migration[7.2]
       t.string :display_on, null: false, default: 'both', index: true
       t.timestamps
 
-      t.index [:namespace, :key]
-      t.index [:resource_type, :namespace, :key], unique: true
+      t.index [ :namespace, :key ]
+      t.index [ :resource_type, :namespace, :key ], unique: true
     end
 
     create_table :spree_metafields do |t|
@@ -22,7 +22,7 @@ class CreateSpreeMetafields < ActiveRecord::Migration[7.2]
 
       t.timestamps
 
-      t.index [:resource_type, :resource_id, :metafield_definition_id], name: 'index_metafields_on_resource_and_definition', unique: true
+      t.index [ :resource_type, :resource_id, :metafield_definition_id ], name: 'index_metafields_on_resource_and_definition', unique: true
     end
   end
 end

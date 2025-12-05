@@ -16,6 +16,6 @@ class FixUniqueIndexOnSpreeOrderPromotions < ActiveRecord::Migration[7.2]
       end
     end
 
-    add_index :spree_order_promotions, [:promotion_id, :order_id], unique: true, name: 'index_spree_order_promotions_on_promotion_id_and_order_id'
+    add_index :spree_order_promotions, [ :promotion_id, :order_id ], unique: true, name: 'index_spree_order_promotions_on_promotion_id_and_order_id'
   end
 end

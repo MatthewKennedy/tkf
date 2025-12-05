@@ -32,7 +32,7 @@ class CreateSpreeImports < ActiveRecord::Migration[7.2]
       t.timestamps
     end
 
-    add_index :spree_import_rows, [:import_id, :row_number], unique: true
+    add_index :spree_import_rows, [ :import_id, :row_number ], unique: true
 
     create_table :spree_import_mappings do |t|
       t.belongs_to :import, null: false
@@ -43,6 +43,6 @@ class CreateSpreeImports < ActiveRecord::Migration[7.2]
       t.timestamps
     end
 
-    add_index :spree_import_mappings, [:import_id, :schema_field], unique: true
+    add_index :spree_import_mappings, [ :import_id, :schema_field ], unique: true
   end
 end
