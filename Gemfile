@@ -73,6 +73,9 @@ end
 # Auth
 gem "devise", "~> 4.9"
 
+gem "recaptcha", "~> 5.21"
+gem "tailwindcss-rails", "~> 4.4"
+
 # Storage
 gem "aws-sdk-s3", "~> 1.199", require: false
 
@@ -101,8 +104,4 @@ gem "spree_emails", spree_opts
 gem "spree_paypal_checkout", "~> 0.5.2"
 
 gem "spree_google_analytics"
-gem "spree_shipstation",      github: "matthewkennedy/spree_shipstation",      branch: "v2-1"
-
-gem "recaptcha", "~> 5.21"
-
-gem "tailwindcss-rails", "~> 4.4"
+gem "spree_shipstation", github: "matthewkennedy/spree_shipstation", branch: "v2-1"
