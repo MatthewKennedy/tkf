@@ -4,7 +4,7 @@ source "https://rubygems.org"
 gem "rails", "~> 8.0.2"
 
 # The modern asset pipeline for Rails [https://github.com/rails/propshaft]
-# gem "propshaft"
+gem "propshaft", "~> 1.3"
 
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.6"
@@ -105,5 +105,3 @@ gem "spree_google_analytics", github: "matthewkennedy/spree_google_analytics", b
 gem "spree_shipstation",      github: "matthewkennedy/spree_shipstation",      branch: "v2-1"
 
 gem "recaptcha", "~> 5.21"
-
-gem "propshaft", "~> 1.3"
