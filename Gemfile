@@ -5,7 +5,6 @@ gem "rails", "~> 8.0.2"
 
 # The modern asset pipeline for Rails [https://github.com/rails/propshaft]
 gem "propshaft", "~> 1.3"
-
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.6"
 # Use the Puma web server [https://github.com/puma/puma]
@@ -101,7 +100,7 @@ gem "spree_storefront", spree_opts
 gem "spree_emails", spree_opts
 gem "spree_paypal_checkout", "~> 0.5.2"
 
-gem "spree_google_analytics", github: "matthewkennedy/spree_google_analytics", branch: "main"
+gem "spree_google_analytics"
 gem "spree_shipstation",      github: "matthewkennedy/spree_shipstation",      branch: "v2-1"
 
 gem "recaptcha", "~> 5.21"
