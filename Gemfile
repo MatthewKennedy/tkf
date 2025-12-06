@@ -104,3 +104,5 @@ gem "spree_google_analytics"
 gem "spree_shipstation",      github: "matthewkennedy/spree_shipstation",      branch: "v2-1"
 
 gem "recaptcha", "~> 5.21"
+
+gem "tailwindcss-rails", "~> 4.4"

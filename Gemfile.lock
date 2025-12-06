@@ -882,6 +882,7 @@ DEPENDENCIES
   spree_shipstation!
   spree_storefront (~> 5.2.0)
   stimulus-rails
+  tailwindcss-rails (~> 4.4)
   thruster
   turbo-rails
   tzinfo-data
