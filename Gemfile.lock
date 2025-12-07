@@ -1,10 +1,10 @@
 GIT
   remote: https://github.com/matthewkennedy/spree_shipstation.git
-  revision: d218d932bbd716be38e46549502cbbe4a66685f6
-  branch: v2-1
+  revision: 130f457176a430afcc6088ae443b15229573aeee
+  tag: v2.0.0
   specs:
     spree_shipstation (2.0.6)
-      spree (>= 3.2.0, < 6.0)
+      spree (>= 5.0, < 6.0)
       spree_extension
 
 GEM
@@ -541,7 +541,7 @@ GEM
       i18n
     rb_sys (0.9.119)
       rake-compiler-dock (= 1.10.0)
-    rdoc (6.16.1)
+    rdoc (6.17.0)
       erb
       psych (>= 4.0.0)
       tsort
@@ -608,7 +608,7 @@ GEM
     sass-embedded (1.94.2-x86_64-linux-musl)
       google-protobuf (~> 4.31)
     securerandom (0.4.1)
-    selenium-webdriver (4.38.0)
+    selenium-webdriver (4.39.0)
       base64 (~> 0.2)
       logger (~> 1.4)
       rexml (~> 3.2, >= 3.2.5)
