@@ -86,7 +86,7 @@ gem "postmark-rails", "~> 0.22.1"
 gem "sentry-ruby"
 gem "sentry-rails"
 
-gem "rails_semantic_logger", "~> 4.17"
+gem "rails_semantic_logger", "~> 4.19"
 
 gem "yabeda", "~> 0.14.0"
 gem "yabeda-activerecord", "~> 0.1.1"
