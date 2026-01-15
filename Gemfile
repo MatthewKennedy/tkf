@@ -96,7 +96,8 @@ gem "yabeda-puma-plugin", "~> 0.7.1"
 gem "yabeda-rails", "~> 0.10.0"
 
 # Spree
-spree_opts = "~> 5.2.0"
+spree_opts = "~> 5.2.5"
+
 gem "spree", spree_opts
 gem "spree_admin", spree_opts
 gem "spree_storefront", spree_opts
