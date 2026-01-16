@@ -10,6 +10,8 @@ Rails.application.configure do
     policy.worker_src  :self, :blob
     policy.style_src   :self, :https, :unsafe_inline, cdn_host
     policy.connect_src :self, :https, cdn_host
+
+    policy.connect_src :self, :https, :blob, cdn_host
   end
 
   config.content_security_policy_nonce_generator  = ->(request) { request.session.id.to_s }
