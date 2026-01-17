@@ -102,7 +102,8 @@ gem "spree", spree_opts
 gem "spree_admin", spree_opts
 gem "spree_storefront", spree_opts
 gem "spree_emails", spree_opts
-gem "spree_paypal_checkout", "~> 0.5.2"
 
 gem "spree_google_analytics"
+
 gem "spree_shipstation", github: "matthewkennedy/spree_shipstation", tag: "v2.0.0"
+gem "spree_paypal_checkout", github: "matthewkennedy/spree_paypal_checkout", branch: "custom"
