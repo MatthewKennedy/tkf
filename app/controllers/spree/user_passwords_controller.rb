@@ -5,7 +5,7 @@ module Spree
     protected
 
     def translation_scope
-      'devise.user_passwords'
+      "devise.user_passwords"
     end
 
     private

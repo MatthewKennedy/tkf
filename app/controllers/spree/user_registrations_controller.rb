@@ -5,7 +5,7 @@ module Spree
     protected
 
     def translation_scope
-      'devise.user_registrations'
+      "devise.user_registrations"
     end
 
     private
