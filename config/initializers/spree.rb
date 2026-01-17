@@ -27,7 +27,12 @@ end
 # Use a CDN host for images, eg. Cloudfront
 # This is used in the frontend to generate absolute URLs to images
 # Default is nil and your application host will be used
-# Spree.cdn_host = 'cdn.example.com'
+Spree.cdn_host = "cdn.tongkat.fitness"
+
+# Multi-store setup
+# You need to set a wildcard `root_domain` on the store to enable multi-store setup
+# all new stores will be created in a subdomain of the root domain, eg. store1.lvh.me, store2.lvh.me, etc.
+Spree.root_domain = ENV.fetch("SPREE_ROOT_DOMAIN", "tongkat.fitness")
 
 # Use a different service for storage (S3, google, etc)
 # unless Rails.env.test?
@@ -56,40 +61,69 @@ end
 # uncomment lines below to add your own custom business logic
 # such as promotions, shipping methods, etc
 Rails.application.config.after_initialize do
-  # Rails.application.config.spree.shipping_methods << Spree::ShippingMethods::SuperExpensiveNotVeryFastShipping
-  # Rails.application.config.spree.payment_methods << Spree::PaymentMethods::VerySafeAndReliablePaymentMethod
+  # Payment methods and shipping calculators
+  # Spree.payment_methods << Spree::PaymentMethods::VerySafeAndReliablePaymentMethod
+  # Spree.calculators.shipping_methods << Spree::ShippingMethods::SuperExpensiveNotVeryFastShipping
+  # Spree.calculators.tax_rates << Spree::TaxRates::FinanceTeamForcedMeToCodeThis
 
-  # Rails.application.config.spree.calculators.tax_rates << Spree::TaxRates::FinanceTeamForcedMeToCodeThis
-
-  # Rails.application.config.spree.stock_splitters << Spree::Stock::Splitters::SecretLogicSplitter
-
-  # Rails.application.config.spree.adjusters << Spree::Adjustable::Adjuster::TaxTheRich
+  # Stock splitters and adjusters
+  # Spree.stock_splitters << Spree::Stock::Splitters::SecretLogicSplitter
+  # Spree.adjusters << Spree::Adjustable::Adjuster::TaxTheRich
 
   # Custom promotions
-  # Rails.application.config.spree.calculators.promotion_actions_create_adjustments << Spree::Calculators::PromotionActions::CreateAdjustments::AddDiscountForFriends
-  # Rails.application.config.spree.calculators.promotion_actions_create_item_adjustments << Spree::Calculators::PromotionActions::CreateItemAdjustments::FinanceTeamForcedMeToCodeThis
-  # Rails.application.config.spree.promotions.rules << Spree::Promotions::Rules::OnlyForVIPCustomers
-  # Rails.application.config.spree.promotions.actions << Spree::Promotions::Actions::GiftWithPurchase
+  # Spree.calculators.promotion_actions_create_adjustments << Spree::Calculators::PromotionActions::CreateAdjustments::AddDiscountForFriends
+  # Spree.calculators.promotion_actions_create_item_adjustments << Spree::Calculators::PromotionActions::CreateItemAdjustments::FinanceTeamForcedMeToCodeThis
+  # Spree.promotions.rules << Spree::Promotions::Rules::OnlyForVIPCustomers
+  # Spree.promotions.actions << Spree::Promotions::Actions::GiftWithPurchase
 
-  # Rails.application.config.spree.taxon_rules << Spree::TaxonRules::ProductsWithColor
+  # Taxon rules
+  # Spree.taxon_rules << Spree::TaxonRules::ProductsWithColor
 
-  # Rails.application.config.spree.exports << Spree::Exports::Payments
-  # Rails.application.config.spree.reports << Spree::Reports::MassivelyOvercomplexReportForCfo
+  # Exports and reports
+  # Spree.export_types << Spree::Exports::Payments
+  # Spree.reports << Spree::Reports::MassivelyOvercomplexReportForCfo
 
-  # Themes and page builder
-  # Rails.application.config.spree.themes << Spree::Themes::NewShinyTheme
-  # Rails.application.config.spree.theme_layout_sections << Spree::PageSections::SuperImportantCeoBio
-  # Rails.application.config.spree.page_sections << Spree::PageSections::ContactFormToGetInTouch
-  # Rails.application.config.spree.page_blocks << Spree::PageBlocks::BigRedButtonToCallSales
+  # Page builder (themes, pages, sections, blocks)
+  # Spree.page_builder.themes << Spree::Themes::NewShinyTheme
+  # Spree.page_builder.theme_layout_sections << Spree::PageSections::SuperImportantCeoBio
+  # Spree.page_builder.pages << Spree::Pages::CustomLandingPage
+  # Spree.page_builder.page_sections << Spree::PageSections::ContactFormToGetInTouch
+  # Spree.page_builder.page_blocks << Spree::PageBlocks::BigRedButtonToCallSales
 
-  Rails.application.config.spree_storefront.head_partials << "spree/shared/custom_head"
+  # Storefront partials
+  # Spree.storefront.partials.head << 'spree/shared/that_js_snippet_that_marketing_forced_me_to_include'
+
+  # Admin partials
+  # Spree.admin.partials.product_form << 'spree/admin/products/custom_section'
+
+  # Role-based permissions
+  # Configure which permission sets are assigned to each role
+  # More on permission sets: https://spreecommerce.org/docs/developer/customization/permissions
+  Spree.permissions.assign(:default, [ Spree::PermissionSets::DefaultCustomer ])
+  Spree.permissions.assign(:admin, [ Spree::PermissionSets::SuperUser ])
+
+  # Example: Create a custom role with specific permissions
+  # Spree.permissions.assign(:customer_service, [
+  #   Spree::PermissionSets::DashboardDisplay,
+  #   Spree::PermissionSets::OrderManagement,
+  #   Spree::PermissionSets::UserDisplay
+  # ])
+  #
+  # Available permission sets:
+  # - Spree::PermissionSets::SuperUser (full admin access)
+  # - Spree::PermissionSets::DefaultCustomer (storefront access)
+  # - Spree::PermissionSets::DashboardDisplay (view admin dashboard)
+  # - Spree::PermissionSets::OrderDisplay / OrderManagement
+  # - Spree::PermissionSets::ProductDisplay / ProductManagement
+  # - Spree::PermissionSets::UserDisplay / UserManagement
+  # - Spree::PermissionSets::StockDisplay / StockManagement
+  # - Spree::PermissionSets::PromotionManagement
+  # - Spree::PermissionSets::ConfigurationManagement
+  # - Spree::PermissionSets::RoleManagement
 end
 
-Spree.user_class = "Spree::User"
-# Use a different class for admin users
-# Spree.admin_user_class = 'AdminUser'
-
-Spree.root_domain = ENV.fetch("SPREE_ROOT_DOMAIN", "tongkat.fitness")
+Spree.user_class       = "Spree::User"
+Spree.admin_user_class = "Spree::AdminUser"
 
 Rails.application.config.to_prepare do
   require_dependency "spree/authentication_helpers"

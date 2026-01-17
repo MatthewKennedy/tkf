@@ -1,11 +1,11 @@
 module Spree
-  class SessionsController < ::Devise::SessionsController
+  class UserSessionsController < ::Devise::SessionsController
     include Spree::Storefront::DeviseConcern
 
     protected
 
     def translation_scope
-      "devise.user_sessions"
+      'devise.user_sessions'
     end
 
     private

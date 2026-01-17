@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_12_05_220029) do
+ActiveRecord::Schema[8.0].define(version: 2026_01_17_142827) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
   enable_extension "pg_trgm"
@@ -139,6 +139,24 @@ ActiveRecord::Schema[8.0].define(version: 2025_12_05_220029) do
     t.index ["order_id"], name: "index_spree_adjustments_on_order_id"
     t.index ["source_id", "source_type"], name: "index_spree_adjustments_on_source_id_and_source_type"
     t.index ["source_type"], name: "index_spree_adjustments_on_source_type"
+  end
+
+  create_table "spree_admin_users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.string "selected_locale"
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "login"
+    t.jsonb "public_metadata"
+    t.jsonb "private_metadata"
+    t.index ["email"], name: "index_spree_admin_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_spree_admin_users_on_reset_password_token", unique: true
   end
 
   create_table "spree_assets", force: :cascade do |t|
@@ -1868,8 +1886,6 @@ ActiveRecord::Schema[8.0].define(version: 2025_12_05_220029) do
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
     t.string "login"
-    t.bigint "ship_address_id"
-    t.bigint "bill_address_id"
     t.string "authentication_token"
     t.string "unlock_token"
     t.datetime "locked_at", precision: nil
@@ -1885,6 +1901,8 @@ ActiveRecord::Schema[8.0].define(version: 2025_12_05_220029) do
     t.string "phone"
     t.boolean "accepts_email_marketing", default: false, null: false
     t.string "spree_api_key", limit: 48
+    t.bigint "bill_address_id"
+    t.bigint "ship_address_id"
     t.index ["accepts_email_marketing"], name: "index_spree_users_on_accepts_email_marketing"
     t.index ["bill_address_id"], name: "index_spree_users_on_bill_address_id"
     t.index ["ship_address_id"], name: "index_spree_users_on_ship_address_id"

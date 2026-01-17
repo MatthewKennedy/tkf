@@ -14,23 +14,23 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = '43601c2ea4594550aacf18e82dd2686a22a0ff5a7d1abc316fe87d0be1c66799af56ec5ef91482a124b4047cf725025dd5ab03ca209f340a5ea5b563619a85dd'
+  # config.secret_key = '587c55c54cc6dbbf510b73461c9ddd6ba024ecb7fd477c8d2ff494d9abbfecfdd540f99021e1dbb48d1ebacb3452e7c5e696c32127d57d908cb7fbdb0dca74ca'
 
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
-  config.parent_controller = "Spree::BaseController"
+  # config.parent_controller = 'DeviseController'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  # config.mailer_sender = ENV.fetch("MAIL_FROM_ADDRESS", "support@mystore.com")
+  # config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
 
   # Configure the class responsible to send e-mails.
-  config.mailer = "Spree::DeviseMailer"
+  # config.mailer = 'Devise::Mailer'
 
   # Configure the parent class responsible to send e-mails.
-  # config.parent_mailer = "Spree::BaseMailer"
+  # config.parent_mailer = 'ActionMailer::Base'
 
   # ==> ORM configuration
   # Load and configure the ORM. Supports :active_record (default) and
@@ -85,7 +85,7 @@ Devise.setup do |config|
   # config.http_authenticatable_on_xhr = true
 
   # The realm used in Http Basic Authentication. 'Application' by default.
-  config.http_authentication_realm = "Spree Application"
+  # config.http_authentication_realm = 'Application'
 
   # It will change confirmation, password recovery and other workflows
   # to behave the same regardless if the e-mail provided was right or wrong.
@@ -126,7 +126,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 12
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = '5825cc15ddb9f648cf0278cfaded203db1658d4c5db2d7d728c21714c5b0d813336aa087d5bef3aa7170137507543e08b3565c1dd5169ef0dcff919e81cfc409'
+  # config.pepper = '2960361557cd95b1ebd19adb78a90dc844f6bd125a1f3f50f5c1934d80657d79fc96860658d52ff02412d57b44eb9c6c6477c93e9a38277c8b82d9d6cfefcf3d'
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
@@ -277,10 +277,10 @@ Devise.setup do |config|
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.
   #
-  require Rails.root.join "lib/devise/custom_devise_failure_app"
-  config.warden do |manager|
-    manager.failure_app = Devise::CustomDeviseFailureApp
-  end
+  # config.warden do |manager|
+  #   manager.intercept_401 = false
+  #   manager.default_strategies(scope: :user).unshift :some_external_strategy
+  # end
 
   # ==> Mountable engine configurations
   # When using Devise inside an engine, let's call it `MyEngine`, and this engine
