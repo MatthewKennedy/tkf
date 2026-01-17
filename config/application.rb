@@ -17,7 +17,7 @@ module Tkf
     end
 
     # Initialize configuration defaults for originally generated Rails version.
-    config.load_defaults 8.0
+    config.load_defaults 8.1
 
     # Load semantic logger
     ::Configuration::SEMANTIC_LOGGER_CONFIG.call(config)
