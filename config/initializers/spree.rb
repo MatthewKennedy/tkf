@@ -14,6 +14,7 @@
 # https://docs.spreecommerce.org/developer/customization
 Spree.config do |config|
   config.product_properties_enabled = true
+
   # Example:
   # Uncomment to stop tracking inventory levels in the application
   # config.track_inventory_levels = false
