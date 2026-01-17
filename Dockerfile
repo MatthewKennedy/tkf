@@ -16,7 +16,9 @@ WORKDIR /rails
 
 # Install base packages
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y build-essential git libpq-dev libyaml-dev pkg-config zlib1g-dev && \
+    apt-get install --no-install-recommends -y \
+    build-essential git libpq-dev libyaml-dev pkg-config zlib1g-dev \
+    libjemalloc2 && \
     rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
 # Set production environment variables and enable jemalloc for reduced memory usage and latency.
