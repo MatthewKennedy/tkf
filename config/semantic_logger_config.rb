@@ -15,3 +15,12 @@ module Configuration
     end
   end
 end
+
+if defined?(SemanticLogger) && !!Rails.application.credentials.dig(:sentry_dsn)
+  SemanticLogger.add_appender(
+    appender: :sentry,
+    level: :info
+  ) do |log|
+    !log.message.to_s.match?(%r{GET /(up|healthz)})
+  end
+end
