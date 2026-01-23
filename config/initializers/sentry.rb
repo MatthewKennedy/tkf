@@ -8,10 +8,8 @@ Sentry.init do |config|
   config.traces_sample_rate = 1.0
   config.excluded_exceptions += [ "SystemExit" ]
 
-  config.transport.options = {
-    headers: {
-      "CF-Access-Client-Id"     => Rails.application.credentials.dig(:cf_access_client_id),
-      "CF-Access-Client-Secret" => Rails.application.credentials.dig(:cf_access_client_secret)
-    }
-  }
+  config.transport.faraday_builder = proc do |builder|
+    builder.headers["CF-Access-Client-Id"] = Rails.application.credentials.dig(:cf_access_client_id)
+    builder.headers["CF-Access-Client-Secret"] = Rails.application.credentials.dig(:cf_access_client_secret)
+  end
 end unless Rails.env.development?
