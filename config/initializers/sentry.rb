@@ -5,8 +5,8 @@ require "sentry/transport/http_transport"
 module Sentry
   class CloudflareTransport < HTTPTransport
     def send_data(data)
-      client_id     = Rails.application.credentials.dig(:cf_access_client_id)
-      client_secret = Rails.application.credentials.dig(:cf_access_client_secret)
+      client_id     = ::Rails.application.credentials.dig(:cf_access_client_id)
+      client_secret = ::Rails.application.credentials.dig(:cf_access_client_secret)
 
       if client_id && client_secret
         @headers["CF-Access-Client-Id"] = client_id
