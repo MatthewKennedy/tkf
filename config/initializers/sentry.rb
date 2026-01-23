@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require Rails.root.join("lib/sentry/cloudflare_transport")
+
 Sentry.init do |config|
   config.dsn = Rails.application.credentials.dig(:sentry_dsn)
   config.environment = Rails.env
@@ -7,9 +9,5 @@ Sentry.init do |config|
   config.send_default_pii = true
   config.traces_sample_rate = 1.0
   config.excluded_exceptions += [ "SystemExit" ]
-
-  config.transport.faraday_builder = proc do |builder|
-    builder.headers["CF-Access-Client-Id"] = Rails.application.credentials.dig(:cf_access_client_id)
-    builder.headers["CF-Access-Client-Secret"] = Rails.application.credentials.dig(:cf_access_client_secret)
-  end
+  config.transport.transport_class = Sentry::CloudflareTransport
 end unless Rails.env.development?
