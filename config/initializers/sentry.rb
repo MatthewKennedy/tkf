@@ -7,4 +7,9 @@ Sentry.init do |config|
   config.send_default_pii = true
   config.traces_sample_rate = 1.0
   config.excluded_exceptions += [ "SystemExit" ]
+
+  config.transport.http_headers = {
+    "CF-Access-Client-Id" => Rails.application.credentials.dig(:cf_access_client_id),
+    "CF-Access-Client-Secret" => Rails.application.credentials.dig(:cf_access_client_secret)
+  }
 end unless Rails.env.development?
