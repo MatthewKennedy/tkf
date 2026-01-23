@@ -36,7 +36,4 @@ Sentry.init do |config|
   config.backtrace_cleanup_callback = lambda do |backtrace|
     Rails.backtrace_cleaner.clean(backtrace)
   end
-
-  # 7. Metrics
-  config.metrics.enabled = true
 end
