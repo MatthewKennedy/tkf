@@ -101,23 +101,32 @@ uat:
 production:
   primary: &primary_production
     <<: *default
-    database: tkf_production
-    host: pg-rw
     username: <%= Rails.application.credentials.dig(:database, :username) %>
     password: <%= Rails.application.credentials.dig(:database, :password) %>
+    database: tkf_production_primary
+    host: pg-primary-pooler-rw
+    prepared_statements: false
+    advisory_locks: false
   cache:
-    <<: *primary_production
+    <<: *default
+    username: <%= Rails.application.credentials.dig(:database, :username) %>
+    password: <%= Rails.application.credentials.dig(:database, :password) %>
     database: tkf_production_cache
-    # host: pg-cache-rw
+    host: pg-cache-pooler-rw
     migrations_paths: db/cache_migrate
+    prepared_statements: false
   queue:
-    <<: *primary_production
-    # host: pg-queue-rw
+    <<: *default
+    username: <%= Rails.application.credentials.dig(:database, :username) %>
+    password: <%= Rails.application.credentials.dig(:database, :password) %>
+    host: pg-queue-pooler-rw
     database: tkf_production_queue
     migrations_paths: db/queue_migrate
+    prepared_statements: false
   cable:
-    <<: *primary_production
-    # host: pg-cable-rw
+    <<: *default
+    username: <%= Rails.application.credentials.dig(:database, :username) %>
+    password: <%= Rails.application.credentials.dig(:database, :password) %>
+    host: pg-cable-pooler-rw
     database: tkf_production_cable
     migrations_paths: db/cable_migrate
-

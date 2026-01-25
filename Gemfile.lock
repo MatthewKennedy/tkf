@@ -881,14 +881,14 @@ DEPENDENCIES
   solid_cable
   solid_cache
   solid_queue
-  spree (~> 5.2.5)
-  spree_admin (~> 5.2.5)
-  spree_emails (~> 5.2.5)
+  spree (~> 5.2.0)
+  spree_admin (~> 5.2.0)
+  spree_emails (~> 5.2.0)
   spree_google_analytics
   spree_paypal_checkout!
   spree_sample
   spree_shipstation!
-  spree_storefront (~> 5.2.5)
+  spree_storefront (~> 5.2.0)
   stimulus-rails
   tailwindcss-rails (~> 4.4)
   thruster
