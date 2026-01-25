@@ -103,7 +103,7 @@ production:
     username: <%= Rails.application.credentials.dig(:database, :username) %>
     password: <%= Rails.application.credentials.dig(:database, :password) %>
     database: tkf_production_primary
-    host: pg-primary-pooler-rw
+    host: pg-primary-pooler
     prepared_statements: false
     advisory_locks: false
   cache:
@@ -111,14 +111,14 @@ production:
     username: <%= Rails.application.credentials.dig(:database, :username) %>
     password: <%= Rails.application.credentials.dig(:database, :password) %>
     database: tkf_production_cache
-    host: pg-cache-pooler-rw
+    host: pg-cache-pooler
     migrations_paths: db/cache_migrate
     prepared_statements: false
   queue:
     <<: *default
     username: <%= Rails.application.credentials.dig(:database, :username) %>
     password: <%= Rails.application.credentials.dig(:database, :password) %>
-    host: pg-queue-pooler-rw
+    host: pg-queue-pooler
     database: tkf_production_queue
     migrations_paths: db/queue_migrate
     prepared_statements: false
@@ -126,6 +126,6 @@ production:
     <<: *default
     username: <%= Rails.application.credentials.dig(:database, :username) %>
     password: <%= Rails.application.credentials.dig(:database, :password) %>
-    host: pg-cable-pooler-rw
+    host: pg-cable-pooler
     database: tkf_production_cable
     migrations_paths: db/cable_migrate
