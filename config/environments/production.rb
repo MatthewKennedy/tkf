@@ -46,8 +46,7 @@ Rails.application.configure do
   # Don't log any deprecations.
   config.active_support.report_deprecations = false
 
- cache_config = Rails.application.config_for(:cache)
- config.cache_store = [ :solid_cache_store, database: :cache, **cache_config ]
+  config.cache_store = :solid_cache_store
 
   # Replace the default in-process and non-durable queuing backend for Active Job.
   config.active_job.queue_adapter = :solid_queue

@@ -85,6 +85,7 @@ gem "postmark-rails", "~> 0.22.1"
 # Instrumentation
 gem "sentry-ruby"
 gem "sentry-rails"
+gem "stackprof", "~> 0.2.27"
 
 gem "rails_semantic_logger", "~> 4.17"
 
