@@ -8,7 +8,7 @@ class CreateSpreeCustomerGroupUsers < ActiveRecord::Migration[7.0]
     end
 
     add_index :spree_customer_group_users,
-              [:customer_group_id, :user_id, :user_type],
+              [ :customer_group_id, :user_id, :user_type ],
               unique: true,
               name: 'index_spree_customer_group_users_unique'
   end

@@ -9,7 +9,7 @@ class CreateSpreeCustomerGroups < ActiveRecord::Migration[7.0]
       t.datetime :deleted_at
     end
 
-    add_index :spree_customer_groups, [:store_id, :name], unique: true, where: 'deleted_at IS NULL'
+    add_index :spree_customer_groups, [ :store_id, :name ], unique: true, where: 'deleted_at IS NULL'
     add_index :spree_customer_groups, :deleted_at
   end
 end

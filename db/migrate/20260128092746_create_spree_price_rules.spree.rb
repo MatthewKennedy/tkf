@@ -8,7 +8,7 @@ class CreateSpreePriceRules < ActiveRecord::Migration[7.0]
       t.timestamps
     end
 
-    add_index :spree_price_rules, [:price_list_id, :type]
+    add_index :spree_price_rules, [ :price_list_id, :type ]
     add_index :spree_price_rules, :type
   end
 end
