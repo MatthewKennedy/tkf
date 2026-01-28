@@ -57,6 +57,7 @@ end
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
+  gem "listen", ">= 3.0"
   gem "web-console"
   gem "spree_sample"
 end
@@ -97,7 +98,7 @@ gem "yabeda-puma-plugin", "~> 0.7.1"
 gem "yabeda-rails", "~> 0.10.0"
 
 # Spree
-spree_opts = "~> 5.2.0"
+spree_opts = "~> 5.3.0"
 
 gem "spree", spree_opts
 gem "spree_admin", spree_opts

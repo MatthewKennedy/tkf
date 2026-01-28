@@ -137,15 +137,12 @@ GEM
       faraday-multipart (~> 1.0)
       faraday-net_http_persistent (~> 2.0)
       faraday-retry (~> 2.0)
+    ar_lazy_preload (2.1.0)
     ast (2.4.3)
-    auto_strip_attributes (2.6.0)
-      activerecord (>= 4.0)
-    autoprefixer-rails (10.4.21.0)
-      execjs (~> 2)
     awesome_nested_set (3.9.0)
       activerecord (>= 4.0.0, < 8.2)
     aws-eventstream (1.4.0)
-    aws-partitions (1.1209.0)
+    aws-partitions (1.1210.0)
     aws-sdk-core (3.241.4)
       aws-eventstream (~> 1, >= 1.3.0)
       aws-partitions (~> 1, >= 1.992.0)
@@ -172,9 +169,6 @@ GEM
     bindex (0.8.1)
     bootsnap (1.21.1)
       msgpack (~> 1.2)
-    bootstrap (4.6.2.1)
-      autoprefixer-rails (>= 9.1.0)
-      popper_js (>= 1.16.1, < 2)
     brakeman (7.1.2)
       racc
     breadcrumbs_on_rails (4.1.0)
@@ -200,9 +194,6 @@ GEM
       unaccent (~> 0.3)
     crass (1.0.6)
     csv (3.3.5)
-    dartsass-rails (0.5.1)
-      railties (>= 6.0.0)
-      sass-embedded (~> 1.63)
     date (3.5.1)
     debug (1.11.1)
       irb (~> 1.10)
@@ -223,7 +214,6 @@ GEM
     erubi (1.13.1)
     et-orbi (1.4.0)
       tzinfo
-    execjs (2.10.0)
     faraday (2.14.0)
       faraday-net_http (>= 2.0, < 3.5)
       json
@@ -266,27 +256,6 @@ GEM
       csv (>= 3.0.0)
     globalid (1.3.0)
       activesupport (>= 6.1)
-    google-protobuf (4.33.4)
-      bigdecimal
-      rake (>= 13)
-    google-protobuf (4.33.4-aarch64-linux-gnu)
-      bigdecimal
-      rake (>= 13)
-    google-protobuf (4.33.4-aarch64-linux-musl)
-      bigdecimal
-      rake (>= 13)
-    google-protobuf (4.33.4-arm64-darwin)
-      bigdecimal
-      rake (>= 13)
-    google-protobuf (4.33.4-x86_64-darwin)
-      bigdecimal
-      rake (>= 13)
-    google-protobuf (4.33.4-x86_64-linux-gnu)
-      bigdecimal
-      rake (>= 13)
-    google-protobuf (4.33.4-x86_64-linux-musl)
-      bigdecimal
-      rake (>= 13)
     groupdate (6.7.0)
       activesupport (>= 7.1)
     heroicon (1.0.0)
@@ -330,18 +299,6 @@ GEM
       sshkit (>= 1.23.0, < 2.0)
       thor (~> 1.3)
       zeitwerk (>= 2.6.18, < 3.0)
-    kaminari (1.2.2)
-      activesupport (>= 4.1.0)
-      kaminari-actionview (= 1.2.2)
-      kaminari-activerecord (= 1.2.2)
-      kaminari-core (= 1.2.2)
-    kaminari-actionview (1.2.2)
-      actionview
-      kaminari-core (= 1.2.2)
-    kaminari-activerecord (1.2.2)
-      activerecord
-      kaminari-core (= 1.2.2)
-    kaminari-core (1.2.2)
     language_server-protocol (3.17.0.5)
     libv8-node (24.12.0.1)
     libv8-node (24.12.0.1-aarch64-linux)
@@ -351,6 +308,10 @@ GEM
     libv8-node (24.12.0.1-x86_64-linux)
     libv8-node (24.12.0.1-x86_64-linux-musl)
     lint_roller (1.1.0)
+    listen (3.10.0)
+      logger
+      rb-fsevent (~> 0.10, >= 0.10.3)
+      rb-inotify (~> 0.9, >= 0.9.10)
     local_time (3.0.3)
     logger (1.7.0)
     loofah (2.25.0)
@@ -429,6 +390,9 @@ GEM
       racc (~> 1.4)
     orm_adapter (0.5.0)
     ostruct (0.6.3)
+    pagy (43.2.8)
+      json
+      yaml
     parallel (1.27.0)
     paranoia (3.1.0)
       activerecord (>= 7, < 8.2)
@@ -447,7 +411,6 @@ GEM
     pg (1.6.3-x86_64-linux)
     pg (1.6.3-x86_64-linux-musl)
     phonelib (0.10.15)
-    popper_js (1.16.1)
     postmark (1.25.1)
       json
     postmark-rails (0.22.1)
@@ -456,7 +419,7 @@ GEM
     pp (0.6.3)
       prettyprint
     prettyprint (0.2.0)
-    prism (1.8.0)
+    prism (1.9.0)
     prometheus-client-mmap (1.5.0)
       base64
       bigdecimal
@@ -553,6 +516,9 @@ GEM
       activerecord (>= 7.2)
       activesupport (>= 7.2)
       i18n
+    rb-fsevent (0.11.2)
+    rb-inotify (0.11.1)
+      ffi (~> 1.0)
     rb_sys (0.9.124)
       rake-compiler-dock (= 1.11.0)
     rdoc (7.1.0)
@@ -569,7 +535,7 @@ GEM
       actionpack (>= 7.0)
       railties (>= 7.0)
     rexml (3.4.4)
-    rubocop (1.82.1)
+    rubocop (1.84.0)
       json (~> 2.3)
       language_server-protocol (~> 3.17.0.2)
       lint_roller (~> 1.1.0)
@@ -577,7 +543,7 @@ GEM
       parser (>= 3.3.0.2)
       rainbow (>= 2.2.2, < 4.0)
       regexp_parser (>= 2.9.3, < 3.0)
-      rubocop-ast (>= 1.48.0, < 2.0)
+      rubocop-ast (>= 1.49.0, < 2.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 2.4.0, < 4.0)
     rubocop-ast (1.49.0)
@@ -605,22 +571,6 @@ GEM
       logger
     rubyzip (3.2.2)
     safely_block (0.5.0)
-    sass-embedded (1.97.3-aarch64-linux-gnu)
-      google-protobuf (~> 4.31)
-    sass-embedded (1.97.3-aarch64-linux-musl)
-      google-protobuf (~> 4.31)
-    sass-embedded (1.97.3-arm-linux-gnueabihf)
-      google-protobuf (~> 4.31)
-    sass-embedded (1.97.3-arm-linux-musleabihf)
-      google-protobuf (~> 4.31)
-    sass-embedded (1.97.3-arm64-darwin)
-      google-protobuf (~> 4.31)
-    sass-embedded (1.97.3-x86_64-darwin)
-      google-protobuf (~> 4.31)
-    sass-embedded (1.97.3-x86_64-linux-gnu)
-      google-protobuf (~> 4.31)
-    sass-embedded (1.97.3-x86_64-linux-musl)
-      google-protobuf (~> 4.31)
     securerandom (0.4.1)
     selenium-webdriver (4.40.0)
       base64 (~> 0.2)
@@ -655,41 +605,42 @@ GEM
       fugit (~> 1.11)
       railties (>= 7.1)
       thor (>= 1.3.1)
-    spree (5.2.6)
-      spree_api (= 5.2.6)
-      spree_cli (= 5.2.6)
-      spree_core (= 5.2.6)
-    spree_admin (5.2.6)
+    spree (5.3.0)
+      spree_api (= 5.3.0)
+      spree_cli (= 5.3.0)
+      spree_core (= 5.3.0)
+    spree_admin (5.3.0)
       active_link_to
-      bootstrap (~> 4.6, >= 4.6.2.1)
       breadcrumbs_on_rails (~> 4.1)
       chartkick (~> 5.0)
-      dartsass-rails (~> 0.5)
       groupdate (~> 6.2)
       hightop (~> 0.3)
       importmap-rails
       inline_svg (~> 1.10)
       local_time (~> 3.0)
       mapkick-rb (~> 0.1)
-      spree_api (>= 5.2.6)
-      spree_core (>= 5.2.6)
+      pagy (~> 43.0)
+      spree (>= 5.3.0)
       stimulus-rails
+      tailwindcss-rails (>= 4.0)
+      tailwindcss-ruby (>= 4.0)
       tinymce-rails (~> 6.8.5)
       turbo-rails
-    spree_api (5.2.6)
+    spree_api (5.3.0)
       bcrypt (~> 3.1)
       doorkeeper (~> 5.3)
       jsonapi-serializer (~> 2.1)
-      spree_core (= 5.2.6)
-    spree_cli (5.2.6)
+      pagy (~> 43.0)
+      spree_core (= 5.3.0)
+    spree_cli (5.3.0)
       thor (~> 1.0)
-    spree_core (5.2.6)
+    spree_core (5.3.0)
       active_storage_validations (= 1.3.0)
       activemerchant (~> 1.67)
       acts-as-taggable-on
       acts_as_list (>= 0.8)
       any_ascii (~> 0.3.2)
-      auto_strip_attributes (~> 2.6)
+      ar_lazy_preload (~> 2.0)
       awesome_nested_set (~> 3.3, >= 3.3.1)
       cancancan (~> 3.2)
       carmen (>= 1.0)
@@ -699,7 +650,6 @@ GEM
       geocoder
       highline (>= 2, < 4)
       image_processing (~> 1.2)
-      kaminari (~> 1.2)
       mobility (~> 1.3, >= 1.3.2)
       mobility-actiontext (~> 1.1)
       mobility-ransack (~> 1.2)
@@ -721,8 +671,8 @@ GEM
       tracking_number
       validates_zipcode
       wannabe_bool
-    spree_emails (5.2.6)
-      spree_core (>= 5.2.6)
+    spree_emails (5.3.0)
+      spree (>= 5.3.0)
     spree_extension (0.1.0)
       activerecord (>= 4.2)
       spree_core
@@ -731,17 +681,22 @@ GEM
       spree_admin (>= 5.1.0)
       spree_extension
       spree_storefront (>= 5.1.0)
-    spree_sample (5.2.6)
+    spree_page_builder (5.3.0)
+      spree (>= 5.3.0)
+      spree_admin (>= 5.3.0)
+    spree_sample (5.3.0)
       ffaker (~> 2.9)
-      spree_core (>= 5.2.6)
-    spree_storefront (5.2.6)
+      spree (>= 5.3.0)
+    spree_storefront (5.3.0)
       active_link_to
       heroicon
       importmap-rails
       inline_svg (~> 1.10)
       local_time (~> 3.0)
       mail_form
-      spree_core (>= 5.2.6)
+      pagy (~> 43.0)
+      spree (>= 5.3.0)
+      spree_page_builder (>= 5.3.0)
       stimulus-rails
       tailwindcss-rails
       tailwindcss-ruby
@@ -839,6 +794,7 @@ GEM
       anyway_config (>= 1.3, < 3)
       railties
       yabeda (~> 0.8)
+    yaml (0.4.0)
     zeitwerk (2.7.4)
     zlib (3.2.2)
 
@@ -867,6 +823,7 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   kamal
+  listen (>= 3.0)
   mini_racer
   pg (~> 1.6)
   postmark-rails (~> 0.22.1)
@@ -882,14 +839,14 @@ DEPENDENCIES
   solid_cable
   solid_cache
   solid_queue
-  spree (~> 5.2.0)
-  spree_admin (~> 5.2.0)
-  spree_emails (~> 5.2.0)
+  spree (~> 5.3.0)
+  spree_admin (~> 5.3.0)
+  spree_emails (~> 5.3.0)
   spree_google_analytics
   spree_paypal_checkout!
   spree_sample
   spree_shipstation!
-  spree_storefront (~> 5.2.0)
+  spree_storefront (~> 5.3.0)
   stackprof (~> 0.2.27)
   stimulus-rails
   tailwindcss-rails (~> 4.4)
