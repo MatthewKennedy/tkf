@@ -7,6 +7,10 @@ on:
     tags:
     - '[0-9]+.[0-9]+.[0-9]+'
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 permissions:
   contents: read
   id-token: write
@@ -45,5 +49,5 @@ jobs:
       with:
         push: ${{ startsWith(github.ref, 'refs/tags/') }}
         tags: ${{ startsWith(github.ref, 'refs/tags/') && format('{0}/tkf:{1}', steps.login-ecr.outputs.registry, env.TAG) || 'tkf:main' }}
-        cache-from: type=gha,scope=tkf-buildx
-        cache-to: type=gha,mode=max,scope=tkf-buildx
+        cache-from: type=gha,scope=${{ github.ref_name }}-tkf
+        cache-to: type=gha,mode=max,scope=${{ github.ref_name }}-tkf
