@@ -107,5 +107,5 @@ gem "spree_emails", spree_opts
 
 gem "spree_google_analytics"
 
-gem "spree_shipstation", github: "matthewkennedy/spree_shipstation", tag: "v2.0.0"
+gem "spree_shipstation", github: "matthewkennedy/spree_shipstation", tag: "v2.0.1"
 gem "spree_paypal_checkout", github: "matthewkennedy/spree_paypal_checkout", branch: "custom"
