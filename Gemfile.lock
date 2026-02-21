@@ -12,7 +12,7 @@ GIT
 
 GIT
   remote: https://github.com/matthewkennedy/spree_shipstation.git
-  revision: cf161d19d01a73bdb0cb73843717921bd1a566cd
+  revision: 3dd7670ce0ff91a6117bdf22b87414adce9aebd3
   branch: improvments
   specs:
     spree_shipstation (2.0.6)
