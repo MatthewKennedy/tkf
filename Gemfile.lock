@@ -686,6 +686,11 @@ GEM
       spree_admin (>= 5.1.0)
       spree_extension
       spree_storefront (>= 5.1.0)
+    spree_mydhl (0.0.1)
+      spree (>= 5.3.3)
+      spree_admin (>= 5.3.3)
+      spree_extension
+      spree_storefront (>= 5.3.3)
     spree_page_builder (5.3.3)
       spree (>= 5.3.3)
       spree_admin (>= 5.3.3)
@@ -848,6 +853,7 @@ DEPENDENCIES
   spree_admin (~> 5.3.0)
   spree_emails (~> 5.3.0)
   spree_google_analytics
+  spree_mydhl (~> 0.0.1)
   spree_paypal_checkout!
   spree_sample
   spree_shipstation!

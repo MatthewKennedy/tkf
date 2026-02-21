@@ -109,3 +109,4 @@ gem "spree_google_analytics"
 
 gem "spree_shipstation", github: "matthewkennedy/spree_shipstation", tag: "v2.0.1"
 gem "spree_paypal_checkout", github: "matthewkennedy/spree_paypal_checkout", branch: "custom"
+gem "spree_mydhl", "~> 0.0.1"
