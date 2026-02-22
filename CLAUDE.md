@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Overview
 
-This is a Rails 8.1 e-commerce application for **Tongkat Fitness** (tongkat.fitness), built on top of [Spree Commerce 5.3](https://spreecommerce.org). The app is deployed as a Docker container via Kamal and uses PostgreSQL as the database.
+This is a Rails 8.1 e-commerce application for **Tongkat Fitness** (tongkat.fitness), built on top of [Spree Commerce 5.3](https://spreecommerce.org). The app runs on Kubernetes, is packaged as a Docker container, and uses PostgreSQL as the database.
 
 ## Commands
 
@@ -85,12 +85,22 @@ Both are configured in `config/initializers/spree.rb` and `config/initializers/d
 - **Solid Cache** for Rails cache (DB-backed)
 - **Solid Cable** for Action Cable (DB-backed)
 
-### Observability
+### Infrastructure & Observability
 
-- **Sentry** for error tracking (`config/initializers/sentry.rb`)
-- **Yabeda + Prometheus** for metrics (`lib/instrumentation/yabeda_metrics.rb`)
-- **rails_semantic_logger** for structured logging
-- CDN configured at `cdn.tongkat.fitness`
+The app runs on **Kubernetes** with the following observability stack:
+
+| Tool | Purpose |
+|---|---|
+| **Sentry** | Error tracking and performance monitoring (`config/initializers/sentry.rb`). Enabled for `production`, `staging`, and `uat`. Health check transactions are filtered out. |
+| **Prometheus** | Metrics collection — exposed via Yabeda + `yabeda-prometheus-mmap` (`lib/instrumentation/yabeda_metrics.rb`). Uses mmap for multi-process Puma support. |
+| **Grafana** | Metrics and log dashboards, fed by Prometheus and Loki. |
+| **Loki** | Log aggregation. |
+| **Vector** | Log shipping agent — collects structured logs from `rails_semantic_logger` and forwards to Loki. |
+| **rails_semantic_logger** | Structured JSON logging, configured in `config/semantic_logger_config.rb`. |
+
+Internal Kubernetes cluster IPs (`10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`) are trusted as proxies in `config/application.rb` so `request.remote_ip` reflects the real client IP in logs and metrics.
+
+CDN is configured at `cdn.tongkat.fitness` (set in `config/initializers/spree.rb` and `config/environments/production.rb`).
 
 ### Permissions
 

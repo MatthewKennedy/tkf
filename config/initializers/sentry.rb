@@ -1,7 +1,7 @@
 Sentry.init do |config|
   config.dsn = Rails.application.credentials.dig(:sentry_dsn)
   config.environment = Rails.env
-  config.enabled_environments = %w[production staging]
+  config.enabled_environments = %w[production staging uat]
 
   # 1. Enable the new Structured Logs feature
   config.enable_logs = true

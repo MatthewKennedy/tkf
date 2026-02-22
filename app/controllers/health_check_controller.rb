@@ -1,5 +1,5 @@
 class HealthCheckController < ApplicationController
-  rescue_from(Exception) { render_down }
+  rescue_from(StandardError) { render_down }
 
   def show
     render_up

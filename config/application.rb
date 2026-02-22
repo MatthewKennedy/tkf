@@ -34,12 +34,13 @@ module Tkf
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
-    # trusted_proxies = [
-    #   # Trust all internal IPs (VPC, ALB, API Gateway)
-    #   IPAddr.new("10.0.0.0/8"),
-    #   IPAddr.new("172.16.0.0/12"),
-    #   IPAddr.new("192.168.0.0/16")
-    # ]
-    # config.action_dispatch.trusted_proxies = trusted_proxies
+
+    # Trust internal Kubernetes/cluster IPs so request.remote_ip reflects the real client IP
+    trusted_proxies = [
+      IPAddr.new("10.0.0.0/8"),
+      IPAddr.new("172.16.0.0/12"),
+      IPAddr.new("192.168.0.0/16")
+    ]
+    config.action_dispatch.trusted_proxies = ActionDispatch::RemoteIp::TRUSTED_PROXIES + trusted_proxies
   end
 end

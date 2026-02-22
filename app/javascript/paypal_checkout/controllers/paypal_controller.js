@@ -57,7 +57,7 @@ export default class extends Controller {
           });
 
           if (response.ok) {
-            const paypalOrder = await response.json();
+            const paypalOrder = await response.json;
 
             if (!paypalOrder.data) {
               throw new Error(paypalOrder.error || 'Failed to create PayPal order');
