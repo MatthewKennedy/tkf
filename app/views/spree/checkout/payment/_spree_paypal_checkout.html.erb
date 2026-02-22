@@ -1,7 +1,7 @@
 <div
   data-controller="checkout-paypal"
   data-checkout-paypal-client-id-value="<%= current_store.paypal_checkout_gateway.preferred_client_id %>"
-  data-checkout-paypal-client-key-value="<%= current_paypal_checkout_gateway.try(:preferred_client_key) %>"
+  data-checkout-paypal-client-key-value="<%= current_store.paypal_checkout_gateway.try(:preferred_client_key) %>"
   data-checkout-paypal-order-number-value="<%= @order.number %>"
   data-checkout-paypal-order-token-value="<%= @order.token %>"
   data-checkout-paypal-currency-value="<%= @order.currency %>"
