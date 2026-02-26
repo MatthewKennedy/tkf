@@ -16,7 +16,11 @@ Rails.application.configure do
   config.action_controller.perform_caching = true
 
   # Cache assets for far-future expiry since they are all digest stamped.
-  config.public_file_server.headers = { "cache-control" => "public, max-age=#{ 1.year.to_i }" }
+  # CORS header required so browsers can load fonts from cdn.tongkat.fitness cross-origin.
+  config.public_file_server.headers = {
+    "cache-control" => "public, max-age=#{ 1.year.to_i }",
+    "access-control-allow-origin" => "*"
+  }
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   config.asset_host = "https://cdn.tongkat.fitness"
