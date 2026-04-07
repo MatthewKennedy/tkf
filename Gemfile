@@ -78,7 +78,7 @@ gem "recaptcha", "~> 5.21"
 gem "tailwindcss-rails", "~> 4.4"
 
 # Storage
-gem "aws-sdk-s3", "~> 1.199", require: false
+gem "aws-sdk-s3", "~> 1.219", require: false
 
 # Emails
 gem "postmark-rails", "~> 0.22.1"
