@@ -88,7 +88,7 @@ gem "sentry-ruby"
 gem "sentry-rails"
 gem "stackprof", "~> 0.2.27"
 
-gem "rails_semantic_logger", "~> 4.17"
+gem "rails_semantic_logger", "~> 4.20"
 
 gem "yabeda", "~> 0.14.0"
 gem "yabeda-activerecord", "~> 0.1.1"
