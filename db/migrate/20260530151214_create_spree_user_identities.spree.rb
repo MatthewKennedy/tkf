@@ -13,6 +13,6 @@ class CreateSpreeUserIdentities < ActiveRecord::Migration[7.0]
       t.timestamps
     end
 
-    add_index :spree_user_identities, [:provider, :uid, :user_type], unique: true, name: 'index_spree_user_identities_on_provider_uid_user_type'
+    add_index :spree_user_identities, [ :provider, :uid, :user_type ], unique: true, name: 'index_spree_user_identities_on_provider_uid_user_type'
   end
 end

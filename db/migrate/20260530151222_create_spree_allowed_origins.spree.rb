@@ -9,7 +9,7 @@ class CreateSpreeAllowedOrigins < ActiveRecord::Migration[7.2]
       t.timestamps
     end
 
-    add_index :spree_allowed_origins, [:store_id, :origin], unique: true,
+    add_index :spree_allowed_origins, [ :store_id, :origin ], unique: true,
               name: 'index_spree_allowed_origins_on_store_id_and_origin'
   end
 end

@@ -15,6 +15,6 @@ class CreateSpreeApiKeys < ActiveRecord::Migration[7.2]
 
     add_index :spree_api_keys, :token, unique: true
     add_index :spree_api_keys, :key_type
-    add_index :spree_api_keys, [:store_id, :key_type]
+    add_index :spree_api_keys, [ :store_id, :key_type ]
   end
 end

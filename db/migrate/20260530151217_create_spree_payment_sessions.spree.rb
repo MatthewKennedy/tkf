@@ -21,7 +21,7 @@ class CreateSpreePaymentSessions < ActiveRecord::Migration[7.2]
       t.timestamps
     end
 
-    add_index :spree_payment_sessions, [:order_id, :payment_method_id, :external_id],
+    add_index :spree_payment_sessions, [ :order_id, :payment_method_id, :external_id ],
               unique: true, name: 'idx_payment_sessions_order_method_external'
     add_index :spree_payment_sessions, :external_id
   end

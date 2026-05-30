@@ -11,9 +11,9 @@ class CreateSpreePriceHistories < ActiveRecord::Migration[7.2]
       t.datetime :created_at, null: false
     end
 
-    add_index :spree_price_histories, [:variant_id, :currency, :recorded_at],
+    add_index :spree_price_histories, [ :variant_id, :currency, :recorded_at ],
               name: 'idx_price_histories_variant_currency_recorded'
-    add_index :spree_price_histories, [:price_id, :recorded_at],
+    add_index :spree_price_histories, [ :price_id, :recorded_at ],
               name: 'idx_price_histories_price_recorded'
     add_index :spree_price_histories, :recorded_at,
               name: 'idx_price_histories_recorded_at'

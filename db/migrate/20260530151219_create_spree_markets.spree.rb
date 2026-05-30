@@ -14,9 +14,9 @@ class CreateSpreeMarkets < ActiveRecord::Migration[7.2]
       t.datetime :deleted_at
     end
 
-    add_index :spree_markets, [:store_id, :name], unique: true, where: 'deleted_at IS NULL'
-    add_index :spree_markets, [:store_id, :default], where: 'deleted_at IS NULL'
-    add_index :spree_markets, [:store_id, :position]
+    add_index :spree_markets, [ :store_id, :name ], unique: true, where: 'deleted_at IS NULL'
+    add_index :spree_markets, [ :store_id, :default ], where: 'deleted_at IS NULL'
+    add_index :spree_markets, [ :store_id, :position ]
     add_index :spree_markets, :deleted_at
 
     create_table :spree_market_countries do |t|
@@ -25,6 +25,6 @@ class CreateSpreeMarkets < ActiveRecord::Migration[7.2]
       t.timestamps
     end
 
-    add_index :spree_market_countries, [:market_id, :country_id], unique: true
+    add_index :spree_market_countries, [ :market_id, :country_id ], unique: true
   end
 end

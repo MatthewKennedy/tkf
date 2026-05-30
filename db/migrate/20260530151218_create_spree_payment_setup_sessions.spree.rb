@@ -18,7 +18,7 @@ class CreateSpreePaymentSetupSessions < ActiveRecord::Migration[7.2]
     end
 
     add_index :spree_payment_setup_sessions, :status
-    add_index :spree_payment_setup_sessions, [:external_id, :payment_method_id],
+    add_index :spree_payment_setup_sessions, [ :external_id, :payment_method_id ],
               unique: true,
               name: 'idx_spree_pss_unique_external_id_per_pm'
   end
