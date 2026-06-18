@@ -837,7 +837,7 @@ DEPENDENCIES
   propshaft (~> 1.3)
   puma (>= 5.0)
   rails (~> 8.1)
-  rails_semantic_logger (~> 4.17)
+  rails_semantic_logger (~> 4.20)
   recaptcha (~> 5.21)
   rubocop-rails-omakase
   selenium-webdriver
