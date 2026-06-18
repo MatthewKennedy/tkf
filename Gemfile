@@ -71,7 +71,7 @@ end
 # Additional Gems #
 ###################
 # Auth
-gem "devise", "~> 4.9"
+gem "devise", "~> 5.0"
 
 gem "recaptcha", "~> 5.21"
 gem "tailwindcss-rails", "~> 4.4"
